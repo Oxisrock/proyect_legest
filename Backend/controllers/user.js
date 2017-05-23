@@ -24,7 +24,15 @@ function signUp (req, res) { // se crea la funcion signUp que recibe un requerim
     return res.status(200) // manda el estatus 200 que fue correcto el guardado del usuario  guarda en la base de datos
   })
 }
+function getUsers (req, res) { // funcion para mostrar todos los usuarios en la base de datos
+  User.find({}, (err, users) => { // el metodo find de mongoose es para recorrer la base de datos y traerse el objeto json completo
+    if (err) return res.status(500).send({message: `Error 500 petition denegade: ${err}`}) // si se genera un error en la peticion se toma con un estatus 500 que no se puede terminar la peticion
+    if (!users) return res.status(404).send({message: 'Not exists users'}) // si la variable que tiene el objeto users esta vacio manda un status 404 quiere decir que no encontro usuarios
+    res.status(200).render('users', {users: users})
+  })
+}
 module.exports =
 {
-  signUp
+  signUp, // palabra reservada para llamar a la funcion signUp
+  getUsers // palabra reservada para llamar a la funcion getUsers
 }
