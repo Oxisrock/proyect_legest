@@ -8,6 +8,23 @@ app.use(bodyParser.urlencoded({extended: false})) // llamada del middleware body
 
 app.use(bodyParser.json()) // para poder utilizar y leer objetos tipo json
 
-app.post('/signup', userCtrl.signup)
+app.post('/signup', userCtrl.signUp) // ruta para el registro de usuarios
 
 app.get('/users', userCtrl.getUsers)
+
+module.exports = app
+
+/*
+  APIRESTFULL
+  GET = Peticion para pedirle algo al servidor
+  POST = Peticion para enviarle lo que sea al servidor
+  PUT = Peticion para sobrescribir o editar cualquier informacion en el servidor
+  DELETE = Peticion para borrar algo que este en el servidor
+*/
+/*
+  codigos de estado
+  200 = la respuesta son correctas y la peticion ha sido procesada correctamente
+  300 = respuestas de redireccion el cliente necesita mas acciones para finalizar la Peticion
+  400 = Errores por el cliente en el servidor
+  500 = Errores por el servidor quiere decir que el servidor esta fallando
+*/
