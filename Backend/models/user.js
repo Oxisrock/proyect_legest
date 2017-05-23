@@ -12,7 +12,7 @@ const UserSchema = new Schema({
   email: { type: 'String', unique: true, lowercase: true, required: 'Email is obligatory' }, // correo con el usuario se registro total mente obligario y tiene que ser unico
   tel: {type: 'Number', unique: true, required: 'Number Celphone is obligatory'}, // telefono obligatorio del cliente
   tel_Opc: {type: 'Number'}, // telefono opcional del usuarios
-  permision_level: {type: 'Number'}, // Crea un nivel de permiso al usuario para saber asi cuanto es el poder que tiene este en la app
+  permision_level: {type: 'Number', default: 1}, // Crea un nivel de permiso al usuario para saber asi cuanto es el poder que tiene este en la app
   singUpDate: {type: Date, default: Date.now()} // el dia que se unio al sistema
 })
 
