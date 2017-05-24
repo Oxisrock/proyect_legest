@@ -12,6 +12,8 @@ app.post('/signup', userCtrl.signUp) // ruta para el registro de usuarios
 
 app.get('/users', userCtrl.getUsers)
 
+app.post('/signin', userCtrl.signIn)
+
 module.exports = app
 
 /*

@@ -35,12 +35,12 @@ function signIn (req, res) { // funcion para validar el logeado de los usuarios
     if (err) return res.status(500).send({ message: err }) // si manda error 500 es que a pasado algo en la peticion
     if (!user) return res.status(404).send({ message: `No existe el usuario` })// si manda error 404 es que no existe este usuario
     req.user = user// luego req.user va a ser igual a user para crear el token
+    console.log('Email :' + req.body.username)
+    console.log('Password :' + req.body.password)
     res.status(200).send({ // manda estado 200 y envia el mensaje que se a logeado correctamente
       message: 'te has logeado correctamente'
     })
   })
-  console.log('Email :' + req.body.email)
-  console.log('Password :' + req.body.password)
 }
 module.exports =
 {
