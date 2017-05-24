@@ -2,7 +2,6 @@
 
 'use strict'
 const User = require('../models/user') // se manda a llamar a el modelo user.js
-
 function signUp (req, res) { // se crea la funcion signUp que recibe un requerimiento y manda una respuesta
   const user = new User({
     firt_name: req.body.firt_name, // Los 2 o un nombre del usuario
@@ -18,7 +17,7 @@ function signUp (req, res) { // se crea la funcion signUp que recibe un requerim
   })
   user.save((err) => { // se manda a guardar el usuario en la base de datos
     if (err) return res.status(500).send({ message: `Error Create User: ${err}` }) // si paso algun error a mandar a guardar
-    console.log('user creado')
+    console.log('user created')
     console.log('Email :' + req.body.email)
     console.log('Password :' + req.body.password)
     return res.status(200) // manda el estatus 200 que fue correcto el guardado del usuario  guarda en la base de datos
@@ -28,11 +27,24 @@ function getUsers (req, res) { // funcion para mostrar todos los usuarios en la 
   User.find({}, (err, users) => { // el metodo find de mongoose es para recorrer la base de datos y traerse el objeto json completo
     if (err) return res.status(500).send({message: `Error 500 petition denegade: ${err}`}) // si se genera un error en la peticion se toma con un estatus 500 que no se puede terminar la peticion
     if (!users) return res.status(404).send({message: 'Not exists users'}) // si la variable que tiene el objeto users esta vacio manda un status 404 quiere decir que no encontro usuarios
-    res.status(200).render('users', {users: users})
+    res.status(200).send({users: users})
   })
+}
+function signIn (req, res) { // funcion para validar el logeado de los usuarios
+  User.find({username: req.body.username}, (err, user) => { // se manda a buscar el correo en la base de datos
+    if (err) return res.status(500).send({ message: err }) // si manda error 500 es que a pasado algo en la peticion
+    if (!user) return res.status(404).send({ message: `No existe el usuario` })// si manda error 404 es que no existe este usuario
+    req.user = user// luego req.user va a ser igual a user para crear el token
+    res.status(200).send({ // manda estado 200 y envia el mensaje que se a logeado correctamente
+      message: 'te has logeado correctamente'
+    })
+  })
+  console.log('Email :' + req.body.email)
+  console.log('Password :' + req.body.password)
 }
 module.exports =
 {
   signUp, // palabra reservada para llamar a la funcion signUp
+  signIn,
   getUsers // palabra reservada para llamar a la funcion getUsers
 }
