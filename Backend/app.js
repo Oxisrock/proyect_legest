@@ -12,6 +12,8 @@ app.post('/signup', userCtrl.signUp) // ruta para el registro de usuarios
 
 app.get('/users', userCtrl.getUsers)
 
+app.get('/users/:userId', userCtrl.getUser) // petion get para mostrar un producto especificado por su ID
+
 app.post('/signin', userCtrl.signIn)
 
 module.exports = app
