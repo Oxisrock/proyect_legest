@@ -12,10 +12,10 @@ const app = document.getElementById('root')
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path='/' component={App} >
-      <indexRouter component={App} />
-      <Route path='Home' component={Home} />
-      <Route path='Contact' component={Contact} />
-      <Route path='Location' component={Location} />
+      <indexRouter component={Home} ></indexRouter>
+      <Route path='Home' name='Home' component={Home} ></Route>
+      <Route path='Contact' name='Contact' component={Contact} ></Route>
+      <Route path='Location' name='Location' component={Location} ></Route>
     </Route>
   </Router>
   , app)
