@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-
 class Footer extends Component {
   render () {
     return (
-      <div className='jumbotron'>
-        <h2 className='text-center text-shadow'> Friender life !</h2>
-      </div>
+      <footer className=''>
+        <div className=''>
+          <p className='text-center text-white'> By <a href='https://github.com/Oxisrock' className='glyphicon glyphicon-gift' /> !</p>
+        </div>
+      </footer>
     )
   }
 }

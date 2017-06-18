@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { IndexLink, Link } from 'react-router'
+import FormLogin from '../FormLogin'
 
 class Nav extends Component {
   constructor () {
@@ -20,27 +21,41 @@ class Nav extends Component {
     const locationClass = location.pathname.match(/^\/Location/) ? 'active' : ''
     const navClass = collapsed ? 'collapse' : ''
     return (
-      <nav className='navbar navbar-inverse navbar-fixed-top' role='navigation'>
+      <nav className='navbar navbar-inverse' role='navigation'>
         <div className='container'>
           <div className='navbar-header'>
-            <button type='button' className='navbar-toogle' onClick={this.toggleCollapse.bind(this)}>
+            <button type='button' className='navbar-toggle' onClick={this.toggleCollapse.bind(this)}>
               <span className='sr-only'></span>
               <span className='icon-bar'></span>
               <span className='icon-bar'></span>
               <span className='icon-bar'></span>
             </button>
+            <a className='navbar-brand hvr-grow'>FRIENDER</a>
           </div>
-          <div className={'navbar-collapse' + navClass} id='bs-example-navbar-collapse-1'>
+          <div className={'navbar-collapse ' + navClass} id='bs-example-navbar-collapse-1'>
             <ul className='nav navbar-nav'>
-              <li className={homeClass}>
+              <li className={'hvr-sweep-to-left hvr-push ' + homeClass}>
                 <IndexLink to='/' onClick={this.toggleCollapse.bind(this)}>Home</IndexLink>
               </li>
-              <li className={contactClass}>
-                <Link to='contact' onClick={this.toggleCollapse.bind(this)}>Contact</Link>
+              <li className={'hvr-sweep-to-left hvr-push ' + contactClass}>
+                <Link to='Contact' onClick={this.toggleCollapse.bind(this)}>Contact</Link>
               </li>
-              <li className={locationClass}>
-                <Link to='location' onClick={this.toggleCollapse.bind(this)}>Location</Link>
+              <li className={'hvr-sweep-to-left hvr-push ' + locationClass}>
+                <Link to='Location' onClick={this.toggleCollapse.bind(this)}>Location</Link>
               </li>
+              <div className='nav navbar-nav navbar'>
+                <li className='dropdown'>
+                  <a className='dropdown-toggle hvr-sweep-to-bottom' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>
+                    <span className='glyphicon glyphicon-user' aria-hidden='true' />
+                    <span className='caret' />
+                  </a>
+                  <ul className='dropdown-menu'>
+                    <li>
+                      <a ><FormLogin /></a>
+                    </li>
+                  </ul>
+                </li>
+              </div>
             </ul>
           </div>
         </div>
