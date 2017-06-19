@@ -8,7 +8,7 @@ class Home extends Component {
       'Some Other Article',
       'Yet Another Article',
       'Still More',
-      'Zelena More Love or Butter'
+      'Zelena More Love'
     ].map((title, i) => <Article key={i} title={title} />)
 
     const adText = [

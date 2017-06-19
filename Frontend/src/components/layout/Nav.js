@@ -21,7 +21,7 @@ class Nav extends Component {
     const locationClass = location.pathname.match(/^\/Location/) ? 'active' : ''
     const navClass = collapsed ? 'collapse' : ''
     return (
-      <nav className='navbar navbar-inverse' role='navigation'>
+      <nav className='navbar navbar-inverse navbar-fixed-top' role='navigation'>
         <div className='container'>
           <div className='navbar-header'>
             <button type='button' className='navbar-toggle' onClick={this.toggleCollapse.bind(this)}>
