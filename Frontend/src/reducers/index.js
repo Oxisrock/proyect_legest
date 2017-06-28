@@ -1,4 +1,4 @@
-import { combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 import { showUsers } from './users'
 
 const rootReducer = combineReducers({
