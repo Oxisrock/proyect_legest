@@ -2,6 +2,19 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { showUsers } from '../actions'
 class Location extends Component {
+  constructor (props) {
+    super(props)
+  }
+  renderUsersList () {
+    return this.props.users.map((user) => {
+      return (
+        <li key={user.id}>{user.name}</li>
+      )
+    })
+  }
+  componentWillMount () {
+    this.props.showUsers()
+  }
   render () {
     return (
       <div className=' container jumbotron'>
@@ -13,7 +26,8 @@ class Location extends Component {
 
 function mapStateToProps (state) {
   return {
-    users: state.user.list
+    // Fix this, why state.user has this object hierarchy { state: { list: [] } }
+    users: state.user.state.list
   }
 }
 
