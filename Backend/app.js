@@ -8,6 +8,12 @@ app.use(bodyParser.urlencoded({extended: false})) // llamada del middleware body
 
 app.use(bodyParser.json()) // para poder utilizar y leer objetos tipo json
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  next()
+})
+
 app.post('/signup', userCtrl.signUp) // ruta para el registro de usuarios
 
 app.get('/users', userCtrl.getUsers)
