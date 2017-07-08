@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import logo from './internt_web_technology-13-256.png'
 class FormLogin extends Component {
   render () {
     return (
       					 <div className="row">
       							<div className="col-md-14">
-      								Login via
+                      <img className="profile-img-card" src={logo} />
+      								<h3 className='text-center'>Login via</h3>
       								<div className="social-buttons">
       									<a href="#" className="btn btn-fb"><span className="fa fa-facebook"></span> Facebook</a>
       									<a href="#" className="btn btn-twitter"><span className="fa fa-twitter"></span>Twitter</a>

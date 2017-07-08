@@ -14,7 +14,7 @@ class Search extends Component {
                             <div className="dropdown-menu dropdown-menu-right" role="menu">
                                 <form className="form-horizontal" role="form">
                                   <div className="form-group">
-                                    <label for="filter">Filter by</label>
+                                    <label for="filter">Filtra por</label>
                                     <select className="form-control">
                                         <option value="0" selected>Todos</option>
                                         <option value="1">Abogados</option>

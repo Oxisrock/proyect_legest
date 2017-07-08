@@ -7,8 +7,11 @@ html,body{
 .navbar {
     background-color: !important;
 }
-.active {
-	  background-color: rgb(50, 118, 177) !important;
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: rgb(50, 118, 177) !important;
 }
 .navbar-brand {
   height: 80px;
@@ -65,4 +68,13 @@ html,body{
 }
 .dobleline {
 	height: 4em;
+}
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }

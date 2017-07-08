@@ -40,16 +40,16 @@ class Nav extends Component {
           <div className={' navbar-right navbar-collapse ' + navClass} id='bs-example-navbar-collapse-1'>
             <ul className='nav navbar-nav navbar-right'>
               <li className={'hvr-sweep-to-left hvr-push ' + homeClass}>
-                <IndexLink to='/' onClick={this.toggleCollapse.bind(this)}>Home</IndexLink>
+                <IndexLink to='/' onClick={this.toggleCollapse.bind(this)}>Home <span className='glyphicon glyphicon-home'></span></IndexLink>
               </li>
               <li className={'hvr-sweep-to-left hvr-push ' + commercesClass}>
-                <Link to='Commerces' onClick={this.toggleCollapse.bind(this)}>Comercios</Link>
+                <Link to='Commerces' onClick={this.toggleCollapse.bind(this)}>Comercios <span className='glyphicon glyphicon-shopping-cart'></span></Link>
               </li>
               <li className={'hvr-sweep-to-left hvr-push ' + tradersClass}>
-                <Link to='Traders' onClick={this.toggleCollapse.bind(this)}>Intercambios</Link>
+                <Link to='Traders' onClick={this.toggleCollapse.bind(this)}>Intercambios <span className='glyphicon glyphicon-briefcase'></span></Link>
               </li>
               <li className={'hvr-sweep-to-left hvr-push ' + usersClass}>
-                <Link to='Users' onClick={this.toggleCollapse.bind(this)}>Usuarios</Link>
+                <Link to='Users' onClick={this.toggleCollapse.bind(this)}>Usuarios <span className='glyphicon glyphicon-plus-sign'></span></Link>
               </li>
               <li>
                 <Search className='text-center' />

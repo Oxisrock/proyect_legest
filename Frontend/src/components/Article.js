@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import back from './18-K-Oro-Anillo-Anillos-de-la-Joyería-Elegante-de-La-Boda-Para-Las-Mujeres-Circón.jpg'
 class Article extends Component {
   render () {
     const { title } = this.props
