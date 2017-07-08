@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Article from '../components/Article.js'
-class Contact extends Component {
+class Traders extends Component {
   render () {
     const { query } = this.props.location
     const { params } = this.props
@@ -21,7 +21,7 @@ class Contact extends Component {
     return (
       <div className='container'>
         <div className='jumbotron'>
-          <h1>Articles</h1>
+          <h2 className='text-center'>Intercambios</h2>
           article: {article}, date: {date}, filter: {filter}
           <div className='row'>{Articles}</div>
         </div>
@@ -30,4 +30,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact
+export default Traders

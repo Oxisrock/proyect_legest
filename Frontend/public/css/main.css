@@ -7,9 +7,24 @@ html,body{
 .navbar {
     background-color: !important;
 }
-
+.active {
+	  background-color: rgb(50, 118, 177) !important;
+}
 .navbar-brand {
-    color: !important;
+  height: 80px;
+}
+.navbar-brand>img {
+  height: 100%;
+  width: auto;
+}
+
+.nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
 }
 
 .mediano {
@@ -38,4 +53,16 @@ html,body{
 	height: 50px;
 	white-space: all;
 	text-overflow: ellipsis;
+}
+.fondo {
+	background-color: grey;
+	margin-bottom: 2em;
+	margin-right: 2em;
+	margin-left: 2em;
+}
+.articles {
+
+}
+.dobleline {
+	height: 4em;
 }

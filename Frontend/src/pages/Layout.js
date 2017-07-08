@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Footer from '../components/layout/Footer'
 
 import Nav from '../components/layout/Nav'
+
 class Layout extends Component {
   render () {
     const { location } = this.props
@@ -18,7 +19,6 @@ class Layout extends Component {
               <h1 className='text-center'>Friender.com</h1>
             </div>
           </div>
-          <Footer />
         </div>
       </div>
     )

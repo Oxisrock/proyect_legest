@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
 import Article from '../components/Article'
-class Home extends Component {
+class Commerces extends Component {
   render () {
     const Articles = [
-      'Curso Diseño Web',
-      'Curso Marketing Online ',
-      'Curso Dibujo 3D',
-      'Curso Modelado 3D',
-      'Curso Como Aprender a Programar sin internet'
+      'MSP Masive Sun Products',
+      'CCR Las Virtudes ',
+      'Black Tienda',
+      'LUG DEV',
+      'Pizzeria Napolis'
     ].map((title, i) => <Article key={i} title={title} />)
     /**
     const adText = [
@@ -25,11 +25,11 @@ class Home extends Component {
     }
     return (
       <div className='container jumbotron' style={containerStyle}>
-        <h2 className='text-center'>Bienvenido</h2>
+        <h2 className='text-center'>Comercios</h2>
         <div className='row articles'>{Articles}</div>
       </div>
     )
   }
 }
 
-export default Home
+export default Commerces
